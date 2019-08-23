@@ -63,23 +63,25 @@ const PokemonDetails = props => {
           flexWrap: "wrap"
         }}
       >
-        <Link to={`/pokemon/${Number(PokemonIndex) - 1}`}>
-          <Card
-            style={{
-              width: "100px",
-              margin: "10px",
-              marginTop: "1rem"
-            }}
-          >
-            <p>Last Pokemon</p>
-            <img
-              alt="pokemon"
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${Number(
-                PokemonIndex
-              ) - 1}.png`}
-            />
-          </Card>
-        </Link>
+        {PokemonIndex > 1 ? (
+          <Link to={`/pokemon/${Number(PokemonIndex) - 1}`}>
+            <Card
+              style={{
+                width: "100px",
+                margin: "10px",
+                marginTop: "1rem"
+              }}
+            >
+              <p>Last Pokemon</p>
+              <img
+                alt="pokemon"
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${Number(
+                  PokemonIndex
+                ) - 1}.png`}
+              />
+            </Card>
+          </Link>
+        ) : null}
 
         <Link to={`/pokemon/${Number(PokemonIndex) + 1}`}>
           <Card
